@@ -32,7 +32,14 @@ subprojects {
 
         afterEvaluate {
             repositories {
-                jcenter()
+//                maven {
+                    // nordea repository
+//                    url 'https://repo url'
+//                    credentials {
+//                        username = "username"
+//                        password = "password"
+//                    }
+//                }
             }
 
             compileJava {

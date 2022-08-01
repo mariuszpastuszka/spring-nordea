@@ -10,13 +10,20 @@ allprojects {
 subprojects {
     repositories {
         mavenLocal()
-        jcenter()
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url "https://repo.spring.io/snapshot/" }
         maven { url "https://repo.spring.io/milestone" }
         maven { url "https://plugins.gradle.org/m2/" }
         maven { url "https://projectlombok.org/edge-releases" }
+// nordea repository
+//        maven {
+//            url 'https://repo url'
+//            credentials {
+//                username = "username"
+//                password = "password"
+//            }
+//        }
     }
 }
 
@@ -168,13 +175,20 @@ ext {
 
 repositories {
     mavenLocal()
-    jcenter()
     mavenCentral()
     maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
     maven { url "https://repo.spring.io/snapshot/" }
     maven { url "https://repo.spring.io/milestone" }
     maven { url "https://plugins.gradle.org/m2/" }
     maven { url "https://projectlombok.org/edge-releases" }
+//    maven {
+        // nordea repository
+//        url 'https://repo url'
+//        credentials {
+//            username = "username"
+//            password = "password"
+//        }
+//    }
 }
 
 task allDeps {
