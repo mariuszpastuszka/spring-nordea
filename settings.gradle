@@ -19,6 +19,23 @@ include 'aop:aop-base'
 include 'aop:boot-aop'
 include 'aop:aop-extras'
 
+include 'data-access:jdbc'
+include 'data-access:jdbc-practice'
+include 'data-access:transactions'
+include 'data-access:transactions-practice'
+include 'data-access:hibernate'
+include 'data-access:hibernate-practice'
+include 'data-access:emf'
+include 'data-access:emf-practice'
+include 'data-access:data-jpa'
+include 'data-access:sec-data-jpa'
+include 'data-access:data-jpa-practice'
+include 'data-access:boot-jpa'
+include 'data-access:mongo-simple'
+include 'data-access:mongo-transactions'
+include 'data-access:boot-mongo'
+include 'data-access:sandbox'
+
 rootProject.children.each { project ->
     project.buildFileName = "${project.name}.gradle"
     assert project.projectDir.isDirectory()
