@@ -1,0 +1,28 @@
+rootProject.name = 'spring-course'
+
+include 'common:dao'
+include 'common:repos'
+
+include 'beans:beans'
+include 'beans:beans-practice'
+include 'beans:pojos'
+include 'beans:pojos-practice'
+include 'beans:config'
+include 'beans:config-practice'
+include 'beans:xml'
+include 'beans:boot'
+
+include 'aop:aop'
+include 'aop:aop-xml'
+include 'aop:aop-practice'
+include 'aop:aop-base'
+include 'aop:boot-aop'
+include 'aop:aop-extras'
+
+rootProject.children.each { project ->
+    project.buildFileName = "${project.name}.gradle"
+    assert project.projectDir.isDirectory()
+    assert project.buildFile.exists()
+    assert project.buildFile.isFile()
+}
+

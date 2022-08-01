@@ -1,0 +1,26 @@
+plugins {
+    id 'java-library'
+}
+
+ext.moduleName = 'com.mpas.cems.repos'
+
+dependencies {
+    compile project(':common:dao')
+
+    compile misc.lang3, misc.ojdbc, misc.slf4j, spring.jdbc, spring.contextSupport
+
+    compile(misc.logback) {
+        exclude group: "javax.activation", module: "activation"
+        exclude group: "edu.washington.cs.types.checker", module: "checker-framework"
+    }
+}
+
+jar {
+    manifest {
+        attributes(
+                "Created-By": System.getProperty('java.version'),
+                "Implementation-Version": archiveVersion,
+                "Class-Path": configurations.compile.collect { it.getName() }.join(' ')
+        )
+    }
+}

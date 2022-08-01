@@ -1,0 +1,19 @@
+plugins {
+    id 'java-library'
+}
+
+ext.moduleName = 'com.mpas.cems.dao'
+
+dependencies {
+    compile hibernate.core, misc.javaxValidation, misc.jacksonDatabind, misc.jacksonJsr310, spring.contextSupport
+}
+
+jar {
+    manifest {
+        attributes(
+                "Created-By": System.getProperty('java.version'),
+                "Implementation-Version": archiveVersion,
+                "Class-Path": configurations.compile.collect { it.getName() }.join(' ')
+        )
+    }
+}

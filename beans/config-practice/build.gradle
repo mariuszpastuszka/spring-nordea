@@ -1,0 +1,20 @@
+plugins {
+    id 'java-library'
+}
+
+ext.moduleName = 'com.mpas.cems.config.practice'
+
+dependencies {
+    compile project(':beans:pojos')
+    compile misc.h2, spring.jdbc, misc.jsr250, misc.inject
+}
+
+jar {
+    manifest {
+        attributes(
+                "Created-By": System.getProperty('java.version'),
+                "Implementation-Version": archiveVersion,
+                "Class-Path": configurations.compile.collect { it.getName() }.join(' ')
+        )
+    }
+}

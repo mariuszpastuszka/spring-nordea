@@ -1,0 +1,21 @@
+plugins {
+    id 'java-library'
+}
+
+ext.moduleName = 'com.mpas.cems.aop.xml'
+
+dependencies {
+    testCompile testing.api, testing.platformRunner, testing.mockito, spring.test
+    testImplementation testing.api
+    testRuntime testing.engine, testing.platformRunner
+}
+
+jar {
+    manifest {
+        attributes(
+                "Created-By": System.getProperty('java.version'),
+                "Implementation-Version": archiveVersion,
+                "Class-Path": configurations.compile.collect { it.getName() }.join(' ')
+        )
+    }
+}
