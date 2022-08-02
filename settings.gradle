@@ -36,6 +36,14 @@ include 'data-access:mongo-transactions'
 include 'data-access:boot-mongo'
 include 'data-access:sandbox'
 
+include 'web:mvc-basic'
+include 'web:mvc-basic-practice'
+include 'web:mvc-basic-xml'
+include 'web:mvc-thymeleaf'
+include 'web:mvc-views'
+include 'web:boot-web'
+include 'web:boot-web-practice'
+
 rootProject.children.each { project ->
     project.buildFileName = "${project.name}.gradle"
     assert project.projectDir.isDirectory()

@@ -10,13 +10,11 @@
     <bean name="composedBeanImpl" class="com.mpas.cems.beans.ci.ComposedBeanImpl"
           c:simpleBean-ref="simpleBeanImpl" c:code="AB123" c:complicated="true"/>
 
-    <!--
-       <bean name="composedBeanImpl"
+       <bean name="composedBeanImpl2"
              class="com.mpas.cems.beans.ci.ComposedBeanImpl">
            <constructor-arg name="simpleBean" ref="simpleBeanImpl"/>
            <constructor-arg name="code" value="AB123" />
            <constructor-arg name="complicated" value="true" />
        </bean>
-       -->
 
 </beans>

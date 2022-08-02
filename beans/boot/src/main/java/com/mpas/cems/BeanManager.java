@@ -17,7 +17,7 @@ public class BeanManager {
         Arrays.stream(ctx.getBeanDefinitionNames()).sorted().forEach(
                 beanName -> sb.append("<br>").append(beanName)
         );
-        sb.append("</body></htm>");
+        sb.append("</body></html>");
         return sb.toString();
     };
 }

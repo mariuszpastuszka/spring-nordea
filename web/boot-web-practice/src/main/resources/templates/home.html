@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head th:replace="~{fragments/layout :: cemsHead('CEMS Home Page')}"></head>
+
+    <body>
+        <header th:replace="~{fragments/layout :: cemsHeader}" ></header>
+
+        <header th:replace="~{fragments/layout :: cemsMenu}" ></header>
+
+        <section th:fragment="~{fragments/layout :: cemsContent}">
+            <p th:text="#{home.caption}" ></p>
+        </section>
+
+        <footer th:replace="~{fragments/layout :: cemsFooter}" ></footer>
+    </body>
+</html>
