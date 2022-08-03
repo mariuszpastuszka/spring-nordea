@@ -44,6 +44,13 @@ include 'web:mvc-views'
 include 'web:boot-web'
 include 'web:boot-web-practice'
 
+include 'rest:rest-classic'
+include 'rest:rest-classic-secured'
+include 'rest:boot-rest-jetty'
+include 'rest:boot-rest'
+include 'rest:boot-rest-practice'
+include 'rest:boot-rest-secured'
+
 rootProject.children.each { project ->
     project.buildFileName = "${project.name}.gradle"
     assert project.projectDir.isDirectory()
