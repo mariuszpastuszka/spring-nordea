@@ -51,6 +51,12 @@ include 'rest:boot-rest'
 include 'rest:boot-rest-practice'
 include 'rest:boot-rest-secured'
 
+include 'security:boot-sec'
+include 'security:mvc-sec'
+include 'security:mvc-sec-xml'
+include 'security:mvc-sec-practice'
+include 'security:mvc-sec-thymeleaf'
+
 rootProject.children.each { project ->
     project.buildFileName = "${project.name}.gradle"
     assert project.projectDir.isDirectory()
