@@ -6,7 +6,7 @@ server:
     enabled: true
   address: 0.0.0.0
   ssl:
-   enabled: true
+    enabled: true
     key-store-type: PKCS12
     key-store: classpath:keystore.jks
     key-store-password: springboot
