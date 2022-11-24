@@ -12,7 +12,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 
-
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 @AutoConfigureMockMvc
 class SpringBootWebApplicationTest {
@@ -36,7 +35,7 @@ class SpringBootWebApplicationTest {
 
     }
 
-   @Test
+    @Test
     void testShowPerson() throws Exception {
         mockMvc.perform(get("/persons/1"))
                 .andExpect(status().isOk())
@@ -50,8 +49,13 @@ class SpringBootWebApplicationTest {
     @Test
     void testErrorPerson() throws Exception {
         mockMvc.perform(get("/persons/99"))
-                .andExpect(status().is4xxClientError())
+                .andExpect(status().isNotFound())
                 .andExpect(view().name("error"))
-                .andExpect(model().attribute("problem", not(emptyString())));
+                .andExpect(model().attribute("problem",
+                        containsString("Person with id: 99 does not exist!")));
+//        mockMvc.perform(get("/persons/99"))
+//                .andExpect(status().is4xxClientError())
+//                .andExpect(view().name("error"))
+//                .andExpect(model().attribute("problem", not(emptyString())));
     }
 }
